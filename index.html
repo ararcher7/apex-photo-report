@@ -9,106 +9,19 @@
   <meta name="apple-mobile-web-app-title" content="Apex Photo Report" />
   <title>Apex Photo Report</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/apex-logo.jpeg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="app-header">
-    <img src="assets/apex-logo.jpeg" alt="Apex Nationwide Inspections" class="header-logo" />
-    <div>
-      <h1>Apex Photo Report</h1>
-      <p>Photos → captions → PDF</p>
-    </div>
-  </header>
-
+  <header class="app-header"><img src="assets/apex-logo.jpeg" alt="Apex Nationwide Inspections" class="header-logo" /><div><h1>Apex Photo Report</h1><p>Photos → captions → PDF</p></div></header>
   <main>
-    <section id="projectsView" class="view active">
-      <div class="toolbar">
-        <div>
-          <h2>Projects</h2>
-          <p class="muted">Create a project, then add photos from your iPhone.</p>
-        </div>
-        <button id="newProjectBtn" class="primary">+ New Project</button>
-      </div>
-      <div id="projectList" class="project-list"></div>
-    </section>
-
-    <section id="projectView" class="view">
-      <div class="project-topbar">
-        <button id="backBtn" class="secondary">‹ Projects</button>
-        <div class="grow">
-          <h2 id="projectTitle">Project</h2>
-          <p id="projectSubtitle" class="muted"></p>
-        </div>
-      </div>
-
-      <div class="action-row">
-        <label class="primary file-button">
-          + Add Photos
-          <input id="photoInput" type="file" accept="image/*" multiple />
-        </label>
-        <button id="reportSettingsBtn" class="secondary">Report Settings</button>
-        <button id="generatePdfBtn" class="primary">Generate PDF</button>
-      </div>
-
-      <div id="emptyPhotos" class="empty-card">
-        <h3>No photos yet</h3>
-        <p>Select photos already taken with your iPhone camera.</p>
-      </div>
-      <div id="photoGrid" class="photo-grid"></div>
-    </section>
+    <section id="projectsView" class="view active"><div class="toolbar"><div><h2>Projects</h2><p class="muted">Create a project, then add photos from your iPhone.</p></div><button id="newProjectBtn" class="primary">+ New Project</button></div><div id="projectList" class="project-list"></div></section>
+    <section id="projectView" class="view"><div class="project-topbar"><button id="backBtn" class="secondary">‹ Projects</button><div class="grow"><h2 id="projectTitle">Project</h2><p id="projectSubtitle" class="muted"></p></div></div><div class="action-row"><label class="primary file-button">+ Add Photos<input id="photoInput" type="file" accept="image/*" multiple /></label><button id="reportSettingsBtn" class="secondary">Report Settings</button><button id="generatePdfBtn" class="primary">Generate PDF</button></div><div id="emptyPhotos" class="empty-card"><h3>No photos yet</h3><p>Select photos already taken with your iPhone camera.</p></div><div id="photoGrid" class="photo-grid"></div></section>
   </main>
-
-  <dialog id="projectDialog">
-    <form id="projectForm" method="dialog">
-      <h2>New Project</h2>
-      <label>Project Name*<input id="projectName" required placeholder="123 Main Street" /></label>
-      <label>Property Address<input id="projectAddress" placeholder="123 Main Street, City, State" /></label>
-      <label>Client Name<input id="projectClient" placeholder="Client name" /></label>
-      <label>Inspection Date<input id="projectDate" type="date" /></label>
-      <label>Project Number<input id="projectNumber" placeholder="Optional" /></label>
-      <div class="dialog-actions">
-        <button type="button" id="cancelProjectBtn" class="secondary">Cancel</button>
-        <button type="submit" class="primary">Create Project</button>
-      </div>
-    </form>
-  </dialog>
-
-  <dialog id="captionDialog">
-    <form id="captionForm" method="dialog">
-      <h2>Photo Caption</h2>
-      <img id="captionPreview" class="caption-preview" alt="Selected photo" />
-      <label>Caption<textarea id="captionText" rows="4" placeholder="Enter or dictate the photo caption..."></textarea></label>
-      <p class="muted small">On iPhone, tap the microphone on the keyboard to dictate.</p>
-      <div class="dialog-actions">
-        <button type="button" id="cancelCaptionBtn" class="secondary">Cancel</button>
-        <button type="submit" class="primary">Save Caption</button>
-      </div>
-    </form>
-  </dialog>
-
-  <dialog id="settingsDialog">
-    <form id="settingsForm" method="dialog">
-      <h2>Report Settings</h2>
-      <fieldset>
-        <legend>Branding</legend>
-        <label class="radio"><input type="radio" name="branding" value="logo" checked /> Apex Logo</label>
-        <label class="radio"><input type="radio" name="branding" value="letterhead" /> Apex Letterhead</label>
-        <label class="radio"><input type="radio" name="branding" value="none" /> No Branding</label>
-      </fieldset>
-      <label>Report Title<input id="reportTitle" value="Photographic Inspection Report" /></label>
-      <label class="checkbox"><input id="showProjectInfo" type="checkbox" checked /> Show project information</label>
-      <label class="checkbox"><input id="showPhotoNumbers" type="checkbox" checked /> Show photo numbers</label>
-      <div class="dialog-actions">
-        <button type="button" id="cancelSettingsBtn" class="secondary">Cancel</button>
-        <button type="submit" class="primary">Save Settings</button>
-      </div>
-    </form>
-  </dialog>
-
+  <dialog id="projectDialog"><form id="projectForm" method="dialog"><h2>New Project</h2><label>Project Name*<input id="projectName" required placeholder="123 Main Street" /></label><label>Property Address<input id="projectAddress" placeholder="123 Main Street, City, State" /></label><label>Client Name<input id="projectClient" placeholder="Client name" /></label><label>Inspection Date<input id="projectDate" type="date" /></label><label>Project Number<input id="projectNumber" placeholder="Optional" /></label><div class="dialog-actions"><button type="button" id="cancelProjectBtn" class="secondary">Cancel</button><button type="submit" class="primary">Create Project</button></div></form></dialog>
+  <dialog id="captionDialog"><form id="captionForm" method="dialog"><h2>Photo Caption</h2><img id="captionPreview" class="caption-preview" alt="Selected photo" /><label>Caption<textarea id="captionText" rows="4" placeholder="Enter or dictate the photo caption..."></textarea></label><p class="muted small">On iPhone, tap the microphone on the keyboard to dictate.</p><div class="dialog-actions"><button type="button" id="cancelCaptionBtn" class="secondary">Cancel</button><button type="submit" class="primary">Save Caption</button></div></form></dialog>
+  <dialog id="settingsDialog"><form id="settingsForm" method="dialog"><h2>Report Settings</h2><fieldset><legend>Branding</legend><label class="radio"><input type="radio" name="branding" value="logo" checked /> Apex Logo</label><label class="radio"><input type="radio" name="branding" value="letterhead" /> Apex Letterhead</label><label class="radio"><input type="radio" name="branding" value="none" /> No Branding</label></fieldset><label>Report Title<input id="reportTitle" value="Photographic Inspection Report" /></label><label class="checkbox"><input id="showProjectInfo" type="checkbox" checked /> Show project information</label><label class="checkbox"><input id="showPhotoNumbers" type="checkbox" checked /> Show photo numbers</label><div class="dialog-actions"><button type="button" id="cancelSettingsBtn" class="secondary">Cancel</button><button type="submit" class="primary">Save Settings</button></div></form></dialog>
   <div id="toast" class="toast" aria-live="polite"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><script src="app.js"></script>
 </body>
 </html>
