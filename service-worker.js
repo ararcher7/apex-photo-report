@@ -1,5 +1,5 @@
 const CACHE='apex-photo-report-v1';
-const CORE=['./','./index.html','./styles.css','./app.js','./manifest.json','./assets/apex-logo.jpeg','./assets/icon-192.png','./assets/icon-512.png'];
+const CORE=['./','./index.html','./styles.css','./app.js','./manifest.json','./assets/apex-logo.jpeg'];
 self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));
 self.addEventListener('fetch',e=>{
